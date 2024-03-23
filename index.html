@@ -1,0 +1,125 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://kit.fontawesome.com/2c2d340242.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="about.js"></script> 
+    <title>AboutMe</title>
+</head>
+<body>
+    <div class="menu">
+        <a class="active" href="index.html">About</a>
+        <a href="contact.html">Contact</a>
+    </div>
+    <div class="social_media">
+        <a href="https://www.linkedin.com/in/sofia-gompou/" target="_blank" class="linkedin"><i class="fa fa-linkedin"></i></a>
+        <a href="https://github.com/sofiagompou" target="_blank" class="github"><i class="fa fa-github"></i></a>
+    </div>
+  <article class="scroller">
+    <div class="section-container">
+        <section class="welcomeTxt" style="text-align: center; background-color:#336699; color:#e0ffff;">
+            <h1 id="multilingualText" class="welcome_msg">Welcome!</h1>
+            <div style="padding: 16px;">
+                <h3 style="margin: 0;">
+                    Scroll to find out more about me :)
+                </h3>
+                <p style="text-align: center;">
+                    <i class="fa-solid fa-angles-down" style="color:#e0ffff"></i>
+                </p>
+            </div>
+        </section>
+    </div>
+    <div class="section-container">
+        <section class="flex flex-row-reverse items-center justify-evenly" style="text-align: right; color:#336699; background-color:#e0ffff;">
+            <p class="text-4xl text-left w-2/3">
+            Hello! I'm Sofia Gompou, an enthusiastic student at the University of Piraeus, Department of Informatics.
+            Through my studies, I have acquired a solid foundation in C#, HTML/CSS/JS, Python, SQL and database management.
+            </p>
+            
+            <div class="object-cover w-[300px]">
+                <img src="./images/peace_emoji.png" alt="me but as an emoji">
+            </div>
+        </section>
+    </div>
+    <div class="section-container">
+        <section style="text-align: left; background-color:#336699; color:#e0ffff;">
+            <div>
+            <p>
+            I thrive on challenges and enjoy bringing creative ideas to life through software development.
+            I find myself quite prone to problem-solving, team working and have a particular interest in software development.
+            The Department's Curriculum has helped me refine my technical skills and gain valuable insights into the field.
+            </p>
+            </div>
+        </section>
+    </div>
+    <div class="section-container">    
+        <section style="text-align: right; color:#336699; background-color:#e0ffff;">
+            <p>During my studies, I've had the opportunity to work on and develop numerous projects. Some of my notable projects are</p>
+            <ul style="list-style-position: inside;">
+                <li>Traffic Lights Operation (Manually or Automatic) - C# WinForms</li>
+                <li>Smart Quarantine Application - C# WinForms</li>
+            </ul>
+            <br>
+            <p>This experience has not only honed my technical skills but also instilled in me the importance of collaboration and adaptability.</p>
+        </section>
+    </div>
+    <div class="section-container">
+        <section style="text-align: left; background-color:#336699; color:#e0ffff;">
+            <p>
+            Currently, I am working on my Thesis project, which focuses on the teaching of Algorithmics.
+            "Teaching Algorithmics: Automatic conversion of an algorithm from a flowchart to Pseudocode & Vice Versa" is an educational 
+            website, developed using HTML/CSS/JavaScript, aimed at 3rd-year high school students studying Computer Science. <br> <br><br>Its purpose is to assist them in understanding and
+            practicing the conversion of flowcharts.
+            </p>
+        </section>
+    <div class="section-container">
+        <section style="text-align: right; color:#336699; background-color:#e0ffff;">
+            <p>
+            I'm currently open to exciting opportunities where I can contribute my skills and passion for software development.
+            Let's connect and explore the possibilities of creating something exceptional together!
+            You can reach me through the contact form or any of my attached social media accounts!
+            </p>
+        </section>
+    </div>
+  </article>
+  <script>
+    const languages = {
+        en: 'Welcome!',
+        es: '¡Bienvenido!',
+        fr: 'Bienvenue!',
+        de: 'Willkommen!',
+        ru: 'Добро пожаловать!',
+        it: 'Benvenuto!',
+        cs: 'Vitejte!',
+        sv: 'Välkommen!',
+    };
+
+    let currentLanguage = 'en';
+    const textElement = document.getElementById('multilingualText');
+
+    function changeLanguage() {
+        textElement.style.opacity = 0;
+        setTimeout(() => {
+            currentLanguage = getNextLanguage(currentLanguage);
+            textElement.textContent = languages[currentLanguage];
+            textElement.style.opacity = 1;
+        }, 1000);
+
+    }
+
+    function getNextLanguage(current) {
+        const languageKeys = Object.keys(languages);
+        const currentIndex = languageKeys.indexOf(current);
+        const nextIndex = (currentIndex + 1) % languageKeys.length;
+        return languageKeys[nextIndex];
+    }
+
+    setInterval(changeLanguage, 5000);
+</script>
+</body>
+</html>

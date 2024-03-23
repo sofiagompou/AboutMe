@@ -1,0 +1,45 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>AboutMe</title>
+</head>
+<body style="overflow: auto;">
+    <div class="menu">
+        <a href="index.html">About</a>
+        <a class="active" href="contact.html">Contact</a>
+    </div>
+    <div class="social_media">
+        <a href="https://www.linkedin.com/in/sofia-gompou/" target="_blank" class="linkedin"><i class="fa fa-linkedin"></i></a>
+        <a href="https://github.com/sofiagompou" target="_blank" class="github"><i class="fa fa-github"></i></a>
+    </div>
+    <div id="container" style="background-color:#e0ffff;">
+        <h1>Contact Me!</h1>
+        <div class="underline">
+        </div>
+        <form action="https://formsubmit.co/sophiagompou@gmail.com" method="POST" id="contact_form">
+          <div class="name">
+            <label for="name"></label>
+            <input type="text" placeholder="My name is" name="name" id="name_input" required>
+          </div>
+          <div class="email">
+            <label for="email"></label>
+            <input type="email" placeholder="My e-mail is" name="email" id="email_input" required>
+          </div>
+          <div class="subject">
+            <label for="subject"></label>
+            <input type="text" placeholder="Subject" name="subject" id="subject_input" required> 
+          </div>
+          <div class="message">
+            <label for="message"></label>
+            <textarea name="message" placeholder="I'd like to contact you about..." id="message_input" cols="30" rows="5" required></textarea>
+          </div>
+          <div class="submit">
+            <input type="submit" value="Send Message" id="submit_button" />
+          </div>
+        </form>
+      </div>
+</html>
